@@ -1,0 +1,26 @@
+# 统一以 LF 存入仓库，避免跨平台协作者产生整文件 diff
+* text=auto eol=lf
+
+# 本项目不需要行尾转换的二进制类型
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.tgz binary
+*.zip binary
+
+# Windows 脚本必须用 CRLF（本项目当前没有这些文件，先立规则）
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# 锁文件由包管理器生成，保持原样不做转换
+pnpm-lock.yaml -text
+package-lock.json -text
+yarn.lock -text

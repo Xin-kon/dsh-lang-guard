@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 396" width="680" height="396" font-family="ui-sans-serif, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" role="img" aria-label="dsh-lang-guard 在系统提示词中的注入位置">
+  <rect width="680" height="396" fill="#ffffff"/>
+
+  <text x="24" y="30" font-size="15" font-weight="600" fill="#1a1a1a">系统提示词组装顺序（真实宿主 assemble() 输出）</text>
+  <text x="24" y="50" font-size="11.5" fill="#6b7280">dsh-lang-guard 注入的约束段位于 harness identity 之后、persona 之前</text>
+
+  <!-- layer 1: harness identity -->
+  <rect x="24" y="70" width="470" height="52" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+  <text x="38" y="90" font-size="12.5" font-weight="600" fill="#374151">harness:identity</text>
+  <text x="38" y="108" font-size="11" fill="#6b7280">You are an AI agent powered by DeepSeek Harness.</text>
+  <text x="506" y="99" font-size="12" font-weight="600" fill="#6b7280">order −1000</text>
+
+  <!-- layer 2: our plugin -->
+  <rect x="24" y="136" width="470" height="86" rx="6" fill="#e6f1fb" stroke="#185fa5" stroke-width="1.5"/>
+  <text x="38" y="157" font-size="12.5" font-weight="600" fill="#0c447c">lang-guard:constraint</text>
+  <text x="38" y="175" font-size="11" fill="#185fa5">你是中文 AI 助手，请严格遵循以下语言规范：</text>
+  <text x="38" y="192" font-size="11" fill="#185fa5">1. 所有思考过程必须使用简体中文。 …</text>
+  <text x="38" y="210" font-size="10.5" fill="#5b7fa6">interpolate: false — 文本按字面量保留，不被宿主插值</text>
+  <text x="506" y="165" font-size="12" font-weight="600" fill="#0c447c">order −200</text>
+  <text x="506" y="184" font-size="10.5" fill="#185fa5">本插件注入</text>
+
+  <!-- arrow -->
+  <path d="M 505 179 l 22 0 m -7 -4 l 7 4 l -7 4" stroke="#185fa5" stroke-width="1.4" fill="none"/>
+
+  <!-- layer 3: persona prefix -->
+  <rect x="24" y="236" width="470" height="52" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+  <text x="38" y="256" font-size="12.5" font-weight="600" fill="#374151">deployment:persona-prefix</text>
+  <text x="38" y="274" font-size="11" fill="#6b7280">You are the deployment assistant.</text>
+  <text x="506" y="265" font-size="12" font-weight="600" fill="#6b7280">order 0</text>
+
+  <!-- layer 4: persona suffix -->
+  <rect x="24" y="302" width="470" height="40" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+  <text x="38" y="327" font-size="12.5" font-weight="600" fill="#374151">deployment:persona-suffix</text>
+  <text x="506" y="327" font-size="12" font-weight="600" fill="#6b7280">order 10200</text>
+
+  <!-- context note -->
+  <rect x="24" y="356" width="470" height="30" rx="6" fill="#e1f5ee" stroke="#0f6e56" stroke-width="1"/>
+  <text x="38" y="375" font-size="11" fill="#085041">lang-guard:reinforcement（order −199）作为运行时 context 快照单独进入会话历史</text>
+</svg>

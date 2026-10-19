@@ -1,0 +1,15 @@
+# dsh-lang-guard bundle patch
+#
+# 这个文件由插件加载器读取：它把插件行插入到 profile 的插件树里。
+# profile 自己的 cordis.patch.yml 可以在这条 insert 之后按 id 覆盖 config，
+# 例如只想改预设、不改文本：
+#
+#   - id: lang-guard
+#     name: dsh-lang-guard
+#     config:
+#       preset: zh-strict
+#
+# 完整可配置项见 README.md「配置项」一节。
+- insert:
+    - id: lang-guard
+      name: dsh-lang-guard

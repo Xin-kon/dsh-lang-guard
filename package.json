@@ -1,0 +1,51 @@
+{
+  "name": "dsh-lang-guard",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness 语言约束插件：把「Agent 必须用中文思考和回答」钉进系统提示词。零运行时依赖、单文件、能力探测 + 双注册路径、失败静默降级。",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "check": "node --check index.js",
+    "test": "node test.mjs",
+    "test:integration": "node test.integration.mjs"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "language",
+    "chinese",
+    "zh-cn",
+    "system-prompt",
+    "prompt-engineering",
+    "i18n",
+    "l10n",
+    "zero-dependency"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xin-kon/dsh-lang-guard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Xin-kon/dsh-lang-guard/issues"
+  },
+  "homepage": "https://github.com/Xin-kon/dsh-lang-guard#readme",
+  "author": "Xin-kon",
+  "license": "MIT"
+}

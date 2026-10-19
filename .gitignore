@@ -1,0 +1,56 @@
+# 依赖与构建产物
+node_modules/
+*.tgz
+*.tar.gz
+
+# 锁文件：库项目通常不提交锁文件（本插件零依赖，但保留此规则以防将来引入依赖）
+# 若你希望固定依赖版本，请取消注释：
+# pnpm-lock.yaml
+# package-lock.json
+# yarn.lock
+
+# 日志与缓存
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+.npm/
+.pnpm-store/
+.cache/
+
+# 测试与覆盖率产物
+coverage/
+.nyc_output/
+*.lcov
+
+# 编辑器与 IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 环境与本地配置（可能含凭据，绝不提交）
+.env
+.env.*
+!.env.example
+*.local
+.envrc
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
+
+# 内部审查记录（本地留存，不进仓库）
+审查报告.md
+
+# 注意：test.mjs 与 test.integration.mjs 是测试套件，**故意不忽略** ——
+# 它们是开源仓库的一部分，见 README「开发」一节。
