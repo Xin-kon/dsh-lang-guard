@@ -6,7 +6,7 @@
 
 零运行时依赖 · 单文件 · 能力探测 + 双注册路径 · 失败静默降级
 
-[![npm version](https://img.shields.io/npm/v/dsh-lang-guard)](https://www.npmjs.com/package/dsh-lang-guard)
+[![GitHub](https://img.shields.io/badge/github-Xin--kon%2Fdsh--lang--guard-181717.svg)](https://github.com/Xin-kon/dsh-lang-guard)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![node](https://img.shields.io/badge/node-%3E%3D16.9-4169bb.svg)](https://nodejs.org)
 [![deps](https://img.shields.io/badge/runtime%20deps-0-brightgreen.svg)](package.json)
@@ -60,15 +60,13 @@ dsh plugin --profile <你的 profile> add file:/绝对路径/dsh-lang-guard
 > **路径必须是绝对路径。**
 > 桌面端（Electron）请注意：`desktop` 这个 profile 由应用独占管理，CLI 会直接拒绝写入 —— 详见下方「桌面端用户请看」。
 
-### 方式二：从 npm / GitHub 安装
+### 方式二：从 GitHub 安装
 
 ```bash
-# npm
-dsh plugin --profile <你的 profile> add dsh-lang-guard
-
-# GitHub
 dsh plugin --profile <你的 profile> add github:<你的用户名>/dsh-lang-guard
 ```
+
+> **npm 包尚未发布**，所以 `dsh plugin add dsh-lang-guard` 目前会找不到包；发布之后这里会补上。现在请用方式一或上面的 GitHub 命令。
 
 ### 方式三：手工挂载
 
